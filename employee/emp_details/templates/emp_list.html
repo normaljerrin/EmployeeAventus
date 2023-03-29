@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/taskliststyle.css' %}">
+    <title>Employee-Lists</title>
+</head>
+<body>
+<br><br>
+    <h1 align="center">Employee List</h1><br>
+    <table id="Employee">
+        <br>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Photo</th>
+            <th>Designation</th> 
+        </tr>
+        {% for employee in emp_list %}
+        <tr>
+
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.photo}}</td>
+            <td>{{employee.designation}}</td>
+            <td><button type="submit" class="btn"><a href="{% url 'emp-create' %}">Add </a></button></td>
+            <td><button type="submit" class="btn"><a href="{% url 'emp-update' employee.id %}">Edit</a></button></td>
+            <td><button type="submit" class="btn"><a href="{% url 'emp-delete' employee.id %}">Delete</a></button></td>
+
+        </tr>
+
+        {% endfor %}
+    </table>
+</link>
+</div>
+</body>
+</html>

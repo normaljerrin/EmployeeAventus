@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Employee-Delete</title>
+</head>
+<body>
+<div class="container">
+<h1 align="center">Delete the Employee Profile</h1>
+<button type="submit" class="btn"><a href="{% url 'emp_list' %}">Go back</a></button>
+    <form method="post" class="">
+    {% csrf_token%}
+    <p>Are you sure you want to delete this employee's profile?</p>
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

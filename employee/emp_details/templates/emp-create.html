@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Emp_create</title>
+</head>
+<body>
+
+<div class="container">
+<h1>Create employee profile</h1>
+     <button type="submit" class="btn"><a href="{% url 'emp_list' %}">Go back</a></button>
+
+<form method="post" action="">
+    {% csrf_token%}
+    {{ form.as_p }}
+    <input type="submit" value="submit">
+
+
+</form>
+</div>
+</body>
+</html>
